@@ -23,30 +23,19 @@ import {
   DebugInstructions,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
-import Tor from 'react-native-tor';
 
-const tor = Tor();
+// Text descibing basic colors to use:
+// Basic gray #5c615d
 
 const App: () => React$Node = () => {
-  const makeTorRequest = async () => {
-    // Start the daemon and socks proxy (no need for Orbot and yes iOS supported!)
-    await tor.startIfNotStarted();
-
-    try {
-      // Use built in client to make REST calls to .onion urls routed through the Sock5 proxy !
-      const resp = await tor.get(
-        '6ttyl7qlzcw44em4euuffq7ut77tx5z3crduq7yazinuilovucn4ybqd.onion/10Ztu1vZsBVhHOEZIDdWXvFX78lWDrgy',
-      );
-      console.log('data:', resp.json());
-      return resp.json;
-    } catch (error) {
-      // Catch a network or server error like you normally with any other fetch library
-    }
-  };
-  const data = makeTorRequest();
-  console.log(JSON.stringify(data));
   return (
     <>
+      <StatusBar
+        animated={true}
+        backgroundColor="#5c615d"
+        barStyle="dark-content"
+        hidden={false}
+      />
       <Text>text</Text>
     </>
   );
