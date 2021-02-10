@@ -4,7 +4,7 @@ import {StyleSheet, Text, View} from 'react-native';
 const MainView = () => {
   return (
     <View>
-      <Text></Text>
+      <Text>Main Viev Placeholder</Text>
     </View>
   );
 };

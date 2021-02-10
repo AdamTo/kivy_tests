@@ -23,6 +23,7 @@ import {
   DebugInstructions,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import MainView from './components/MainView';
 
 // Text descibing basic colors to use:
 // Basic gray #5c615d
@@ -36,7 +37,7 @@ const App: () => React$Node = () => {
         barStyle="dark-content"
         hidden={false}
       />
-      <Text>text</Text>
+      <MainView />
     </>
   );
 };
